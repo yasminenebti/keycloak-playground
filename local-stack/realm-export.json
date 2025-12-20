@@ -1,0 +1,42 @@
+{
+  "realm": "customer-app",
+  "enabled": true,
+  "displayName": "customer-app",
+  "users": [
+    {
+      "username": "yasmine",
+      "enabled": true,
+      "email": "yasmine@example.com",
+      "firstName": "Yasmine",
+      "lastName": "Nebti",
+      "credentials": [
+        { "type": "password", "value": "Yasmine", "temporary": false }
+      ],
+      "realmRoles": ["secure_global"]
+    }
+  ],
+  "roles": {
+    "realm": [
+      { "name": "secure_global", "description": "Global role required for /secured" }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "client-app",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "http://localhost:5173/*"
+      ],
+      "webOrigins": [
+        "http://localhost:5173"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      }
+    }
+  ]
+}
